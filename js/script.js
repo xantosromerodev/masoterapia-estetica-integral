@@ -1,7 +1,7 @@
 // ─── CONFIGURACIÓN ─────────────────────────────────────────────
 // Pega aquí la URL de tu página de reservas de Happoin.
 // La encuentras en tu panel: app.happoin.com/es/TU-NEGOCIO
-const HAPPOIN_URL = 'https://app.happoin.com/es/reservar/36140';
+const HAPPOIN_URL = 'https://app.happoin.com/es/reservar/36141';
 
 // Número de WhatsApp (sin espacios ni +)
 const WA_NUMBER = '573027452273';

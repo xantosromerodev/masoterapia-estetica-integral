@@ -625,6 +625,7 @@ body {
     background: var(--cream);
 }
 
+/* HEADER */
 .location__label {
     font-size: 0.7rem;
     font-weight: 500;
@@ -647,23 +648,34 @@ body {
     color: var(--rose-dark);
 }
 
+/* 🔥 NUEVA ESTRUCTURA 2 COLUMNAS */
 .location__body {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
 }
 
-.location__details {
+/* COLUMNAS */
+.location__col {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
 }
 
+/* INTRO TEXTO */
+.location__intro {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--dark);
+    margin-bottom: 2.5rem;
+}
+
+/* ITEMS (igual pero optimizado) */
 .location__detail-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .location__detail-icon {
@@ -699,6 +711,44 @@ body {
     line-height: 1.6;
 }
 
+/* 🔥 LADO DERECHO (CONVERSIÓN) */
+.location__how {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* SUBTÍTULO */
+.location__subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+}
+
+/* PASOS */
+.location__steps {
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.location__steps li {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+    color: var(--dark);
+}
+
+/* NOTA */
+.location__note {
+    font-size: 0.85rem;
+    color: var(--rose-dark);
+    font-style: italic;
+}
+
+/* CTA */
 .location__cta {
     display: inline-block;
     font-size: 0.78rem;
@@ -708,33 +758,17 @@ body {
     text-decoration: none;
     color: var(--rose-dark);
     border: 1px solid var(--rose);
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.5rem;
     border-radius: 2px;
     transition: all 0.25s;
+    margin-top: 2rem;
     align-self: flex-start;
-    margin-top: 0.5rem;
 }
 
 .location__cta:hover {
     background: var(--rose-dark);
     border-color: var(--rose-dark);
     color: white;
-}
-
-.location__map-wrapper {
-    position: relative;
-    width: 100%;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(140, 92, 66, 0.08);
-}
-
-.location__map {
-    display: block;
-    width: 100%;
-    height: 420px;
-    border: none;
 }
 
 
