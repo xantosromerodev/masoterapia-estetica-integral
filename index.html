@@ -4,284 +4,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Masajes y tratamientos estéticos a domicilio en el Valle de Aburrá. Rituales faciales, corporales y de mirada personalizados por Sofía Villamizar.">
     <title>Sofía Villamizar | Masoterapia & Estética Integral</title>
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css">
-
+    <!-- Librería de mapas -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 
 <body>
 
-    <!-- NAV -->
-    <nav class="nav">
-        <div class="nav__logo">Sofía Villamizar | Masoterapia & Estética Integral</div>
-        <a href="#reservar" class="nav__cta">Reservar cita</a>
-    </nav>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero__panel hero__panel--left">
-            <div class="hero__tag">Masajes a domicilio · Medellín</div>
-            <h1 class="hero__title">
-                Tu <em class="hero__title-em">bienestar</em><br>
-                es un ritual,<br>
-                no un lujo.
-            </h1>
-            <p class="hero__subtitle">
-                Tratamientos estéticos personalizados para realzar tu belleza natural. Rituales faciales, corporales y
-                de mirada diseñados especialmente para ti.
-            </p>
-            <a href="#reservar" class="hero__cta">Agenda tu consulta ahora</a>
-        </div>
-        <div class="hero__panel hero__panel--right">
-            <div class="hero__pattern"></div>
-            <div class="hero__stats">
-                <div class="stat">
-                    <div class="stat__number">+500</div>
-                    <div class="stat__label">Clientas felices</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__number">5★</div>
-                    <div class="stat__label">Calificación</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__number">3</div>
-                    <div class="stat__label">Líneas de servicio</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__number">100%</div>
-                    <div class="stat__label">Personalizado</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ENCABEZADO -->
+    <header class="nav">
+        <p class="nav__logo">Sofía Villamizar <span aria-hidden="true">|</span> Masoterapia &amp; Estética Integral
+        </p>
+        <nav class="nav__menu" aria-label="Navegación principal">
+            <a href="#reservar" class="nav__cta">Reservar cita</a>
+        </nav>
+    </header>
 
-    <!-- SERVICIOS -->
-    <section class="services" id="servicios">
-        <div class="services__label">Nuestros tratamientos</div>
-        <h2 class="services__title">Cada servicio, una experiencia<br><em class="services__title-em">diseñada para
-                ti</em></h2>
-        <div class="services__grid">
-            <div class="service-card">
-                <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24" stroke-width="1.5">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                        <circle cx="12" cy="12" r="3" />
-                    </svg>
+    <main id="contenido">
+
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__panel hero__panel--left">
+                <p class="hero__tag">Masajes a domicilio · Medellín</p>
+                <h1 class="hero__title" id="hero-title">
+                    Tu <em class="hero__title-em">bienestar</em><br>
+                    es un ritual,<br>
+                    no un lujo.
+                </h1>
+                <p class="hero__subtitle">
+                    Tratamientos estéticos personalizados para realzar tu belleza natural. Rituales faciales,
+                    corporales y de mirada diseñados especialmente para ti.
+                </p>
+                <a href="#reservar" class="hero__cta">Agenda tu consulta ahora</a>
+            </div>
+            <div class="hero__panel hero__panel--right">
+                <div class="hero__pattern" aria-hidden="true"></div>
+                <ul class="hero__stats">
+                    <li class="hero__stat">
+                        <p class="hero__stat-value">+500</p>
+                        <p class="hero__stat-label">Clientas felices</p>
+                    </li>
+                    <li class="hero__stat">
+                        <p class="hero__stat-value">5<span aria-hidden="true">★</span><span
+                                class="sr-only">estrellas</span></p>
+                        <p class="hero__stat-label">Calificación</p>
+                    </li>
+                    <li class="hero__stat">
+                        <p class="hero__stat-value">3</p>
+                        <p class="hero__stat-label">Líneas de servicio</p>
+                    </li>
+                    <li class="hero__stat">
+                        <p class="hero__stat-value">100%</p>
+                        <p class="hero__stat-label">Personalizado</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section class="services" id="servicios" aria-labelledby="services-title">
+            <p class="services__label">Nuestros tratamientos</p>
+            <h2 class="services__title" id="services-title">Cada servicio, una experiencia<br><em
+                    class="services__title-em">diseñada para ti</em></h2>
+            <ul class="services__grid">
+                <li class="service-card">
+                    <div class="service-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" focusable="false">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__name">Mirada</h3>
+                    <p class="service-card__desc">Realzamos la belleza de tu mirada con tratamientos especializados:
+                        diseño, depilación, laminado de cejas y lifting de pestañas, todo personalizado según tu
+                        fisionomía.</p>
+                </li>
+                <li class="service-card">
+                    <div class="service-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" focusable="false">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__name">Rituales Corporales</h3>
+                    <p class="service-card__desc">Experiencias de bienestar enfocadas en aliviar la tensión física y
+                        el estrés cotidiano. A través de nuestros rituales Calma Profunda y Liberación Corporal, te
+                        acompañamos hacia un estado de mayor equilibrio, descanso y confort corporal.</p>
+                </li>
+                <li class="service-card">
+                    <div class="service-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" focusable="false">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__name">Rituales Faciales Personalizados</h3>
+                    <p class="service-card__desc">Analizamos las necesidades de tu piel para diseñar un ritual único y
+                        personalizado. Limpieza profunda, hidratación y luminosidad para ayudarte a mantener una piel
+                        saludable, equilibrada y radiante.</p>
+                </li>
+                <li class="service-card">
+                    <div class="service-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" focusable="false">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__name">Experiencia a Domicilio</h3>
+                    <p class="service-card__desc">Llevamos el bienestar hasta tu hogar para que disfrutes de una
+                        experiencia cómoda, personalizada y sin desplazamientos. Nos encargamos de cada detalle para
+                        que solo tengas que relajarte y disfrutar de tu ritual.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- PROCESO -->
+        <section class="process" aria-labelledby="process-title">
+            <p class="process__label">¿Cómo funciona?</p>
+            <h2 class="process__title" id="process-title">Tu camino hacia<br><em class="process__title-em">el
+                    bienestar</em></h2>
+            <ol class="process__steps">
+                <li class="step">
+                    <p class="step__number" aria-hidden="true">01</p>
+                    <h3 class="step__name">Agenda tu cita</h3>
+                    <p class="step__desc">Completa el formulario o escríbenos por WhatsApp. En menos de 5 minutos te
+                        confirmamos tu cita.</p>
+                </li>
+                <li class="step">
+                    <p class="step__number" aria-hidden="true">02</p>
+                    <h3 class="step__name">Diagnóstico inicial</h3>
+                    <p class="step__desc">Sofía evalúa tu piel, tu objetivo y tu estilo de vida para diseñar el
+                        protocolo ideal para ti.</p>
+                </li>
+                <li class="step">
+                    <p class="step__number" aria-hidden="true">03</p>
+                    <h3 class="step__name">Tu ritual personalizado</h3>
+                    <p class="step__desc">Disfruta de un tratamiento diseñado únicamente para ti, en un ambiente
+                        íntimo y relajante.</p>
+                </li>
+                <li class="step">
+                    <p class="step__number" aria-hidden="true">04</p>
+                    <h3 class="step__name">Seguimiento &amp; resultados</h3>
+                    <p class="step__desc">Recibe recomendaciones de cuidado en casa y un plan de mantenimiento para
+                        que los resultados duren.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- TESTIMONIOS -->
+        <section class="testimonials" id="testimonios" aria-labelledby="testimonials-title">
+            <p class="testimonials__label">Lo que dicen ellas</p>
+            <h2 class="testimonials__title" id="testimonials-title">Resultados que<br>hablan por sí solos</h2>
+            <ul class="testimonials__grid">
+                <li class="testimonial">
+                    <blockquote class="testimonial__quote">
+                        <p class="testimonial__text">Sofi. Te admiro. Eres muy buena en lo que haces. No hay nada
+                            mejor que un trabajo con calidad y una voz honesta. Y más allá de tu trabajo, como
+                            persona, siento que todos aprendemos de todos obviamente, pero particularmente tú eres una
+                            maestra espectacular, para muchas personas y para ti también.</p>
+                    </blockquote>
+                    <p class="testimonial__stars" aria-label="Calificación: 5 de 5 estrellas">
+                        <span aria-hidden="true">★★★★★</span>
+                    </p>
+                    <footer class="testimonial__meta">
+                        <cite class="testimonial__author">Camilo U.</cite>
+                        <p class="testimonial__service">Experiencia a Domicilio</p>
+                    </footer>
+                </li>
+                <li class="testimonial">
+                    <blockquote class="testimonial__quote">
+                        <p class="testimonial__text">Gracias Sofi por honrar mi espacio con tu hermosa presencia, por
+                            tu terapia tan completa, metódica, personalizada y liberadora.</p>
+                    </blockquote>
+                    <p class="testimonial__stars" aria-label="Calificación: 5 de 5 estrellas">
+                        <span aria-hidden="true">★★★★★</span>
+                    </p>
+                    <footer class="testimonial__meta">
+                        <cite class="testimonial__author">Daniela R.</cite>
+                        <p class="testimonial__service">Experiencia a Domicilio</p>
+                    </footer>
+                </li>
+                <li class="testimonial">
+                    <blockquote class="testimonial__quote">
+                        <p class="testimonial__text">Gracias especiales mi Sofi por cuidar, limpiar, asesorar,
+                            escuchar y aconsejar a mi amiga, lo valoro muchísimo.</p>
+                    </blockquote>
+                    <p class="testimonial__stars" aria-label="Calificación: 5 de 5 estrellas">
+                        <span aria-hidden="true">★★★★★</span>
+                    </p>
+                    <footer class="testimonial__meta">
+                        <cite class="testimonial__author">Carolina G.</cite>
+                        <p class="testimonial__service">Ritual Facial Personalizado</p>
+                    </footer>
+                </li>
+                <li class="testimonial">
+                    <blockquote class="testimonial__quote">
+                        <p class="testimonial__text">Llegué con mucha tensión acumulada en la espalda, cuello y
+                            hombros. Al terminar el masaje sentí una diferencia increíble, con más movilidad y una
+                            sensación de ligereza que hacía tiempo no experimentaba. Sofi tiene una forma muy
+                            profesional de trabajar y realmente se nota que adapta el masaje a lo que tu cuerpo
+                            necesita. Salí renovado y con una sensación de bienestar que me acompañó durante varios
+                            días.</p>
+                    </blockquote>
+                    <p class="testimonial__stars" aria-label="Calificación: 5 de 5 estrellas">
+                        <span aria-hidden="true">★★★★★</span>
+                    </p>
+                    <footer class="testimonial__meta">
+                        <cite class="testimonial__author">Andrés M.</cite>
+                        <p class="testimonial__service">Ritual Liberación Corporal</p>
+                    </footer>
+                </li>
+            </ul>
+        </section>
+
+        <!-- UBICACIÓN -->
+        <section class="location" id="ubicacion" aria-labelledby="location-title">
+            <p class="location__label">¿Cómo prefieres atenderte?</p>
+            <h2 class="location__title" id="location-title">Llevamos la experiencia<br><em
+                    class="location__title-em">hasta donde estés</em></h2>
+            <div class="location__body">
+                <address class="location__details">
+                    <div class="location__detail-item">
+                        <div class="location__detail-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" stroke-width="1.5" focusable="false">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                                <circle cx="12" cy="9" r="2.5" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="location__detail-label">Servicio a domicilio</p>
+                            <p class="location__detail-value">Atendemos en la zona sur de Medellín.</p>
+                        </div>
+                    </div>
+                    <div class="location__detail-item">
+                        <div class="location__detail-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                                <path d="M12 21s-6-5.33-6-11a6 6 0 1 1 12 0c0 5.67-6 11-6 11z" />
+                                <circle cx="12" cy="10" r="2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="location__detail-label">Estudio privado en Itagüí</p>
+                            <p class="location__detail-value">La ubicación exacta se comparte al confirmar la cita.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="location__detail-item">
+                        <div class="location__detail-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" stroke-width="1.5" focusable="false">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="location__detail-label">Horarios</p>
+                            <p class="location__detail-value">Lunes a sábado: <time datetime="09:00">9:00 am</time> –
+                                <time datetime="18:00">6:00 pm</time></p>
+                        </div>
+                    </div>
+                    <div class="location__detail-item">
+                        <div class="location__detail-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                                <path
+                                    d="M12 3C7.03 3 3 6.84 3 11.57c0 1.71.53 3.29 1.43 4.62L3.5 21l4.99-1.3A9.5 9.5 0 0 0 12 20.14c4.97 0 9-3.84 9-8.57S16.97 3 12 3Z" />
+                                <path
+                                    d="M9.2 8.4c.16-.36.42-.4.68-.4h.58c.21 0 .45.04.56.31l.62 1.52c.1.25.08.46-.08.64l-.48.56c-.12.14-.15.32-.07.49.58 1.21 1.55 2.2 2.76 2.78.16.08.35.05.48-.07l.57-.48c.18-.16.39-.18.64-.08l1.52.62c.27.11.31.35.31.56v.58c0 .26-.04.52-.4.68-.54.24-1.4.27-2.49-.2-1.02-.44-2.18-1.28-3.32-2.42-1.14-1.14-1.98-2.3-2.42-3.32-.47-1.09-.44-1.95-.2-2.49Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="location__detail-label">¿Tienes dudas?</p>
+                            <p class="location__detail-value">Escríbenos por WhatsApp</p>
+                            <p class="location__detail-value">
+                                <a class="location__phone-link" href="https://wa.me/573244090520">324 409 0520</a>
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/573244090520" class="location__cta" target="_blank"
+                        rel="noopener noreferrer">Consultar cobertura<span aria-hidden="true">→</span></a>
+                </address>
+                <div class="location__map-wrapper">
+                    <div id="map" class="location__map" role="img"
+                        aria-label="Mapa con la cobertura de servicio a domicilio en Itagüí, Envigado, El Poblado y Laureles">
+                    </div>
                 </div>
-                <div class="service-card__name">Mirada</div>
-                <p class="service-card__desc">Realzamos la belleza de tu mirada con tratamientos especializados:
-                    laminación de
-                    cejas, lifting de pestañas y diseño personalizado según tu fisionomía.</p>
             </div>
-            <div class="service-card">
-                <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24" stroke-width="1.5">
-                        <path
-                            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-                    </svg>
-                </div>
-                <div class="service-card__name">Rituales Corporales</div>
-                <p class="service-card__desc">Experiencias de bienestar enfocadas en aliviar la tensión física y el
-                    estrés cotidiano. A través de nuestros rituales Calma Profunda y Liberación Corporal, te acompañamos
-                    hacia un estado de mayor equilibrio, descanso y confort corporal.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24" stroke-width="1.5">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                </div>
-                <div class="service-card__name">Rituales Faciales Personalizados</div>
-                <p class="service-card__desc">Analizamos las necesidades de tu piel para diseñar un ritual único y
-                    personalizado. Limpieza profunda, hidratación y luminosidad para ayudarte a mantener una piel
-                    saludable, equilibrada y radiante.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24" stroke-width="1.5">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                </div>
-                <div class="service-card__name">Experiencia a Domicilio</div>
-                <p class="service-card__desc">Llevamos el bienestar hasta tu hogar para que disfrutes de una experiencia
-                    cómoda, personalizada y sin desplazamientos. Nos encargamos de cada detalle para que solo tengas que
-                    relajarte y disfrutar de tu ritual.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PROCESO -->
-    <section class="process">
-        <div class="process__label">¿Cómo funciona?</div>
-        <h2 class="process__title">Tu camino hacia<br><em class="process__title-em">el bienestar</em></h2>
-        <div class="process__steps">
-            <div class="step">
-                <div class="step__number">01</div>
-                <div class="step__name">Agenda tu cita</div>
-                <p class="step__desc">Completa el formulario o escríbenos por WhatsApp. En menos de 5 minutos te
-                    confirmamos tu cita.</p>
+        <!-- FORMULARIO DE RESERVA -->
+        <section class="lead" id="reservar" aria-labelledby="lead-title">
+            <div class="lead__copy">
+                <p class="lead__label">Reserva ahora</p>
+                <h2 class="lead__title" id="lead-title">
+                    Tu <em class="lead__title-em">experiencia de</em><br>
+                    bienestar comienza<br>
+                    aquí
+                </h2>
+                <p class="lead__desc">
+                    Cuéntanos qué necesitas y Sofía te diseñará el tratamiento perfecto. Sin compromiso, sin costo.
+                    Solo tú y tu bienestar.<br><br>
+                    También puedes escribirnos directamente por WhatsApp al
+                    <a class="lead__phone-link" href="https://wa.me/573244090520">324 409 0520</a>
+                    y te respondemos de inmediato.
+                </p>
             </div>
-            <div class="step">
-                <div class="step__number">02</div>
-                <div class="step__name">Diagnóstico inicial</div>
-                <p class="step__desc">Sofia evalúa tu piel, tu objetivo y tu estilo de vida para diseñar el protocolo
-                    ideal para ti.</p>
-            </div>
-            <div class="step">
-                <div class="step__number">03</div>
-                <div class="step__name">Tu ritual personalizado</div>
-                <p class="step__desc">Disfruta de un tratamiento diseñado únicamente para ti, en un ambiente íntimo y
-                    relajante.</p>
-            </div>
-            <div class="step">
-                <div class="step__number">04</div>
-                <div class="step__name">Seguimiento & resultados</div>
-                <p class="step__desc">Recibe recomendaciones de cuidado en casa y un plan de mantenimiento para que los
-                    resultados duren.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="testimonials" id="testimonios">
-        <div class="testimonials__label">Lo que dicen ellas</div>
-        <h2 class="testimonials__title">Resultados que<br>hablan por sí solos</h2>
-        <div class="testimonials__grid">
-            <div class="testimonial">
-                <p class="testimonial__text">Sofi. Te admiro. Eres muy buena en lo que haces. No hay nada mejor que un
-                    trabajo con calidad y una voz honesta. Y más allá de tu trabajo, como persona, siento que todos
-                    aprendemos de todos obviamente, pero particularmente tú eres una maestra espectacular, para muchas
-                    personas y para ti también.</p>
-                <div class="testimonial__stars">★★★★★</div>
-                <div class="testimonial__author">Camilo U.</div>
-                <div class="testimonial__service">Experiencia a Domicilio</div>
-            </div>
-            <div class="testimonial">
-                <p class="testimonial__text">Gracias Sofi por honrar mi espacio con tu hermosa presencia, por tu terapia
-                    tan completa, metódica, personalizada y liberadora.</p>
-                <div class="testimonial__stars">★★★★★</div>
-                <div class="testimonial__author">Daniela R.</div>
-                <div class="testimonial__service">Experiencia a Domicilio</div>
-            </div>
-            <div class="testimonial">
-                <p class="testimonial__text">Gracias especiales mi Sofi por cuidar, limpiar, asesora, escuchar y
-                    aconsejar a mi amiga, lo valoro muchísimo.</p>
-                <div class="testimonial__stars">★★★★★</div>
-                <div class="testimonial__author">Carolina G.</div>
-                <div class="testimonial__service">Ritual Facial Personalizado</div>
-            </div>
-            <div class="testimonial">
-                <p class="testimonial__text">Llegué con mucha tensión acumulada en la espalda, cuello y hombros. Al
-                    terminar el masaje sentí una diferencia increíble, con más movilidad y una sensación de ligereza que
-                    hacía tiempo no experimentaba. Sofi tiene una forma muy profesional de trabajar y realmente se nota
-                    que adapta el masaje a lo que tu cuerpo necesita. Salí renovado y con una sensación de bienestar que
-                    me acompañó durante varios días.</p>
-                <div class="testimonial__stars">★★★★★</div>
-                <div class="testimonial__author">Andrés M.</div>
-                <div class="testimonial__service">Ritual Liberación Corporal</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- UBICACIÓN --> <section class="location" id="ubicacion"> <div class="location__label">¿Dónde estamos?</div> <h2 class="location__title">Llevamos la experiencia<br><em class="location__title-em">a donde estés</em></h2> <div class="location__body"> <div class="location__details"> <div class="location__detail-item"> <div class="location__detail-icon"> <svg viewBox="0 0 24 24" stroke-width="1.5"> <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /> <circle cx="12" cy="9" r="2.5" /> </svg> </div> <div> <div class="location__detail-label">Cobertura</div> <div class="location__detail-value">Área metropolitana del Valle de Aburrá<br>Consulta disponibilidad para tu zona</div> </div> </div> <div class="location__detail-item"> <div class="location__detail-icon"> <svg viewBox="0 0 24 24" stroke-width="1.5"> <circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /> </svg> </div> <div> <div class="location__detail-label">Horario</div> <div class="location__detail-value">Lun – Sáb: 9:00 am – 6:00 pm<br>Citas previas recomendadas </div> </div> </div> <div class="location__detail-item"> <div class="location__detail-icon"> <svg viewBox="0 0 24 24" stroke-width="1.5"> <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /> </svg> </div> <div> <div class="location__detail-label">WhatsApp</div> <div class="location__detail-value">324 409 0520</div> </div> </div> <a href="https://www.google.com/maps/search/?api=1&query=Cra+53A+%2343a-21+Itagüí+Antioquia+Colombia" class="location__cta" target="_blank" rel="noopener noreferrer"> Cómo llegar → </a> </div> <div class="location__map-wrapper"> <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.65%2C6.14%2C-75.57%2C6.24&layer=mapnik&marker=6.185%2C-75.598" class="location__map" title="Ubicación Sofia Villamizar Estética — Itagüí, Antioquia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen> </iframe> </div> </div> </section>
-
-    <!-- LEAD FORM -->
-    <section class="lead" id="reservar">
-        <div class="lead__copy">
-            <div class="lead__label">Reserva ahora</div>
-            <h2 class="lead__title">
-                Tu <em class="lead__title-em">experiencia de</em><br>
-                bienestar comienza<br>
-                aquí
-            </h2>
-            <p class="lead__desc">
-                Cuéntanos qué necesitas y Sofia te diseñará el tratamiento perfecto. Sin compromiso, sin costo. Solo tú
-                y tu bienestar.<br><br>
-                También puedes escribirnos directamente por WhatsApp al <strong>324 409 0520</strong> y te
-                respondemos de inmediato.
-            </p>
-        </div>
-
-        <div class="form-card">
-            <div class="form-card__body" id="form-content">
-                <div class="form-card__title">Agenda tu cita</div>
-                <p class="form-card__subtitle">Te confirmamos en menos de 5 minutos</p>
-                <form class="form" id="lead-form" onsubmit="handleSubmit(event)">
-                    <div class="form__row">
-                        <div class="form__group">
-                            <label class="form__label">Nombre</label>
-                            <input class="form__input" type="text" placeholder="Tu nombre" required>
+            <div class="form-card">
+                <div class="form-card__body" id="form-content">
+                    <h3 class="form-card__title">Agenda tu cita</h3>
+                    <p class="form-card__subtitle">Te confirmamos en menos de 5 minutos</p>
+                    <form class="form" id="lead-form" novalidate>
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label class="form__label" for="nombre">Nombre</label>
+                                <input class="form__input" type="text" id="nombre" name="nombre"
+                                    autocomplete="given-name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="apellido">Apellido</label>
+                                <input class="form__input" type="text" id="apellido" name="apellido"
+                                    autocomplete="family-name" placeholder="Tu apellido" required>
+                            </div>
                         </div>
                         <div class="form__group">
-                            <label class="form__label">Apellido</label>
-                            <input class="form__input" type="text" placeholder="Tu apellido" required>
+                            <label class="form__label" for="celular">Celular</label>
+                            <input class="form__input" type="tel" id="celular" name="celular" autocomplete="tel"
+                                placeholder="+57 300 000 0000" required>
                         </div>
-                    </div>
-                    <div class="form__group">
-                        <label class="form__label">Celular</label>
-                        <input class="form__input" type="tel" placeholder="+57 300 000 0000" required>
-                    </div>
-                    <div class="form__group">
-                        <label class="form__label">¿Qué servicio te interesa?</label>
-                        <select class="form__select" required>
-                            <option value="" disabled selected>Selecciona un servicio</option>
-                            <option>Tratamiento de Mirada</option>
-                            <option>Ritual Corporal</option>
-                            <option>Ritual Facial Personalizado</option>
-                            <option>Quiero conocer todas las opciones</option>
-                        </select>
-                    </div>
-                    <div class="form__group">
-                        <label class="form__label">¿Algo que quieras contarnos?</label>
-                        <textarea class="form__textarea"
-                            placeholder="Cuéntanos sobre tu piel, tus objetivos o cualquier inquietud..."></textarea>
-                    </div>
-                    <button type="submit" class="form__submit">Solicitar mi cita →</button>
-                    <p class="form__note">🔒 Tus datos están seguros. Solo los usamos para contactarte.</p>
-                </form>
-            </div>
-            <div class="form-card__success" id="success-msg">
-                <div class="form-card__check">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--rose-dark)"
-                        stroke-width="2">
-                        <polyline points="20 6 9 17 4 12" />
-                    </svg>
+                        <div class="form__group">
+                            <label class="form__label" for="servicio">¿Qué servicio te interesa?</label>
+                            <select class="form__select" id="servicio" name="servicio" required>
+                                <option value="" disabled selected>Selecciona un servicio</option>
+                                <option>Tratamiento de Mirada</option>
+                                <option>Ritual Corporal</option>
+                                <option>Ritual Facial Personalizado</option>
+                                <option>Quiero conocer todas las opciones</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label" for="notas">¿Algo que quieras contarnos?</label>
+                            <textarea class="form__textarea" id="notas" name="notas"
+                                placeholder="Cuéntanos sobre tu piel, tus objetivos o cualquier inquietud..."></textarea>
+                        </div>
+                        <button type="submit" class="form__submit">Solicitar mi cita <span
+                                aria-hidden="true">→</span></button>
+                        <p class="form__note">🔒 Tus datos están seguros. Solo los usamos para contactarte.</p>
+                    </form>
                 </div>
-                <strong class="form-card__success-title">¡Perfecto! Ahora elige tu horario</strong>
-                <p class="form-card__success-text">Selecciona el día y la hora que más te convenga. Sofia te estará
-                    esperando.</p>
+                <div class="form-card__success" id="success-msg" role="status" aria-live="polite">
+                    <div class="form-card__check" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--rose-dark)"
+                            stroke-width="2" focusable="false">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <strong class="form-card__success-title">¡Perfecto! Ahora elige tu horario</strong>
+                    <p class="form-card__success-text">Selecciona el día y la hora que más te convenga. Sofía te
+                        estará esperando.</p>
+                    <div class="form-card__actions" id="success-actions"></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+    </main>
 
-    <!-- FOOTER -->
+    <!-- PIE DE PÁGINA -->
     <footer class="footer">
-        <div class="footer__brand">Sofía Villamizar | Masoterapia & Estética Integral</div>
-        <nav class="footer__nav">
+        <p class="footer__brand">Sofía Villamizar <span aria-hidden="true">|</span> Masoterapia &amp; Estética
+            Integral</p>
+        <nav class="footer__nav" aria-label="Enlaces del pie de página">
             <a class="footer__link" href="#servicios">Servicios</a>
             <a class="footer__link" href="#testimonios">Testimonios</a>
             <a class="footer__link" href="#ubicacion">Ubicación</a>
             <a class="footer__link" href="#reservar">Reservar</a>
             <a class="footer__link" href="https://wa.me/573027452273">WhatsApp</a>
         </nav>
-        <div class="footer__note">© 2026 Sofía Villamizar | Masoterapia & Estética Integral</div>
+        <p class="footer__note">© 2026 Sofía Villamizar | Masoterapia &amp; Estética Integral</p>
     </footer>
 
-    <!-- WHATSAPP FLOAT -->
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <a class="wa-button" href="https://wa.me/573244090520?text=Hola%20Sofia!%20Me%20interesa%20agendar%20una%20cita."
-        target="_blank" title="Escribir por WhatsApp">
-        <svg viewBox="0 0 24 24">
+        target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" title="Escribir por WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
     </a>
 
-    <script src="js/script.js"></script>
+    <!-- Librería de mapas -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
